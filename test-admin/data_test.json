@@ -1,0 +1,56 @@
+{
+  "employe": [
+    {
+      "id": 1,
+      "firstname": "Alice Martin",
+      "email": "alice@company.com",
+      "department": "informatique",
+      "salary": "2800 £",
+      "actif": true
+    },
+    {
+      "id": 2,
+      "firstname": "Bob Dupont",
+      "email": "bob@company.com",
+      "department": "Marketing",
+      "salary": "2500 £",
+      "actif": true
+    },
+    {
+      "id": 3,
+      "firstname": "Clara Nguyen",
+      "email": "clara@company.com",
+      "department": "RH",
+      "salary": "2600 £",
+      "status": false
+    },
+    {
+      "status": true,
+      "firstname": "nomena",
+      "email": "mathieu@gmail.com",
+      "department": "Finance",
+      "salary": 2560,
+      "id": 4
+    }
+  ]
+  ,"interns":[
+    {
+      "id":1,
+      "firstname":"RAKOTOHARILALA",
+      "lastname":"randy junior",
+      "department":"informatique",
+      "status":"actif",
+      "pay-status":true,
+      "FramerId":1
+    },
+    {
+  "id": 3,
+  "firstname": "RANDRIANARISOA",
+  "lastname": "Sarah",
+  "department": "Marketing",
+  "status": "inactif",
+  "pay-status": true,
+  "FramerId": 2
+}
+  ]
+}

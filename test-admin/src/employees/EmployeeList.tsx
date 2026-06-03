@@ -28,12 +28,12 @@ export const EmployeeList = () => {
   return (
     <List filters={employeeFilters} perPage={5}>
       <Datagrid rowClick="show">
-        <TextField source="prenom" label="Prenom" />
+        <TextField source="firstname" label="Prenom" />
         <TextField source="email" label="Email" />
-        <TextField source="departement" label="Département" />
+        <TextField source="department" label="Département" />
 
         <NumberField
-          source="salaire"
+          source="salary"
           label="Salaire"
           options={{
             style: "currency",
@@ -41,7 +41,7 @@ export const EmployeeList = () => {
           }}
         />
 
-        <BooleanField source="active" label="Actif" />
+        <BooleanField source="status" label="Actif" />
 
         <EditButton />
         <DeleteButton />

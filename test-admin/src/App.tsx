@@ -5,7 +5,7 @@ import { EmployeeList } from "./employees/EmployeeList.tsx";
 import { EmployeeCreate } from "./employees/EmployeeCreate";
 import { EmployeeEdit } from "./employees/EmployeeEdit";
 import { EmployeeShow } from "./employees/EmployeeShow";
-import { StagiareList } from "./Stagiaires/StagiaireList.tsx";
+import {InternList} from "./Interns/InternList.tsx"
 
 const dataProvider = jsonServerProvider("http://localhost:3002");
 
@@ -13,7 +13,7 @@ export default function App() {
   return (
     <Admin dataProvider={dataProvider}>
       <Resource name="employe" list={EmployeeList} create={EmployeeCreate} edit={EmployeeEdit} show={EmployeeShow} />
-      <Resource name="stagiaire" list={StagiareList}/>
+      <Resource name="interns" list={InternList}/>
     </Admin>
   );
 }
