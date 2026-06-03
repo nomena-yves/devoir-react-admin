@@ -6,7 +6,7 @@
       "email": "alice@company.com",
       "department": "informatique",
       "salary": "2800 £",
-      "actif": true
+      "status": true
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "email": "bob@company.com",
       "department": "Marketing",
       "salary": "2500 £",
-      "actif": true
+      "status": true
     },
     {
       "id": 3,

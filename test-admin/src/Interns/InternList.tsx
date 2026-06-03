@@ -6,13 +6,16 @@ import {
   useGetList,
   useRecordContext,
   RecordContextProvider,
+  SelectInput,
+  EditButton,
+  DeleteButton
 } from "react-admin";
 
-type  FramerFieldProps = {
+type FramerFieldProps = {
   label?: string;
 };
 
-const FramerField = ({ label:_label = "Encadreur" }: FramerFieldProps) => {
+const FramerField = ({ label: _label = "Encadreur" }: FramerFieldProps) => {
   const record = useRecordContext();
 
   const { data: employe } = useGetOne(
@@ -23,7 +26,7 @@ const FramerField = ({ label:_label = "Encadreur" }: FramerFieldProps) => {
     }
   );
 
-  
+
   const { data: employes = [] } = useGetList("employe");
 
 
@@ -31,9 +34,9 @@ const FramerField = ({ label:_label = "Encadreur" }: FramerFieldProps) => {
     (e) => e.id === record?.FramerId
   );
 
- 
+
   const FramerValide =
-    employe?.actif &&
+    employe?.status &&
     employe?.departementId === record?.departementId &&
     FramerFromList;
 
@@ -55,13 +58,13 @@ const FramerField = ({ label:_label = "Encadreur" }: FramerFieldProps) => {
 type AmountFieldProps = {
   label?: string;
 };
-const AmountField = ({ label:_label }: AmountFieldProps) => {
+const AmountField = ({ label: _label }: AmountFieldProps) => {
   const record = useRecordContext();
 
   if (!record || !record["pay-status"]) return null;
 
   return (
-     <span>
+    <span>
       {new Intl.NumberFormat("fr-FR", {
         style: "currency",
         currency: "EUR",
@@ -70,11 +73,36 @@ const AmountField = ({ label:_label }: AmountFieldProps) => {
   );
 };
 
+const internFilters = [
+  <SelectInput
+    key="department"
+    source="department"
+    label="Département"
+    choices={[
+      { id: "informatique", name: "Informatique" },
+      { id: "Marketing", name: "Marketing" },
+      { id: "RH", name: "RH" },
+      { id: "Finance", name: "Finance" },
+    ]}
+    alwaysOn
+  />,
+  <SelectInput
+    key="pay-status"
+    source="pay-status"
+    label="Rémunération"
+    choices={[
+      { id: true, name: "Rémunéré" },
+      { id: false, name: "Non rémunéré" },
+    ]}
+    alwaysOn
+  />,
+];
 AmountField.defaultProps = {
   label: "Salaire",
 };
+
 export const InternList = () => (
-  <List>
+  <List filters={internFilters}>
     <Datagrid>
       <TextField source="id" />
       <TextField source="firstname" label="nom" />
@@ -83,6 +111,8 @@ export const InternList = () => (
       <TextField source="status" label="status" />
       <FramerField label="encadreur" />
       <AmountField label="Montant" />
+              <EditButton />
+              <DeleteButton />
     </Datagrid>
   </List>
 );
