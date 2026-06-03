@@ -52,6 +52,27 @@ const FramerField = ({ label:_label = "Encadreur" }: FramerFieldProps) => {
   );
 };
 
+type AmountFieldProps = {
+  label?: string;
+};
+const AmountField = ({ label:_label }: AmountFieldProps) => {
+  const record = useRecordContext();
+
+  if (!record || !record["pay-status"]) return null;
+
+  return (
+     <span>
+      {new Intl.NumberFormat("fr-FR", {
+        style: "currency",
+        currency: "EUR",
+      }).format(record.amount)}
+    </span>
+  );
+};
+
+AmountField.defaultProps = {
+  label: "Salaire",
+};
 export const InternList = () => (
   <List>
     <Datagrid>
@@ -61,6 +82,7 @@ export const InternList = () => (
       <TextField source="department" label="département" />
       <TextField source="status" label="status" />
       <FramerField label="encadreur" />
+      <AmountField label="Montant" />
     </Datagrid>
   </List>
 );

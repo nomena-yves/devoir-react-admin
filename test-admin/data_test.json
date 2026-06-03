@@ -41,6 +41,7 @@
       "department":"informatique",
       "status":"actif",
       "pay-status":true,
+      "amount":2500,
       "FramerId":1
     },
     {
