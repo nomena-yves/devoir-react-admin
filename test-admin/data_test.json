@@ -32,26 +32,37 @@
       "salary": 2560,
       "id": 4
     }
-  ]
-  ,"interns":[
+  ],
+  "interns": [
     {
-      "id":1,
-      "firstname":"RAKOTOHARILALA",
-      "lastname":"randy junior",
-      "department":"informatique",
-      "status":"actif",
-      "pay-status":true,
-      "amount":2500,
-      "FramerId":1
+      "id": 1,
+      "firstname": "RAKOTOHARILALA",
+      "lastname": "randy junior",
+      "department": "informatique",
+      "status": "actif",
+      "pay-status": true,
+      "amount": 2500,
+      "FramerId": 1
     },
     {
-  "id": 3,
-  "firstname": "RANDRIANARISOA",
-  "lastname": "Sarah",
-  "department": "Marketing",
-  "status": "inactif",
-  "pay-status": true,
-  "FramerId": 2
-}
+      "id": 3,
+      "firstname": "RANDRIANARISOA",
+      "lastname": "Sarah",
+      "department": "Marketing",
+      "status": "inactif",
+      "pay-status": true,
+      "FramerId": 2
+    },
+    {
+      "pay-status": false,
+      "firstname": "RABEMANANJARA",
+      "lastname": "Cathy",
+      "email": "cathy@gmail.com",
+      "department": "Marketing",
+      "status": "actif",
+      "FramerId": 2,
+      "amount": null,
+      "id": 4
+    }
   ]
 }
