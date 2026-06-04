@@ -6,6 +6,7 @@ import {
   NumberField,
   ReferenceField,
 } from "react-admin";
+import {ManagerCard} from "./ManagerCard.tsx"
 
 export const InternShow = () => {
   return (
@@ -33,7 +34,7 @@ export const InternShow = () => {
         >
           <TextField source="firstname" />
         </ReferenceField>
-
+        <ManagerCard />
       </SimpleShowLayout>
     </Show>
   );
